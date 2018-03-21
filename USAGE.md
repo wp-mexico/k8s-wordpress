@@ -12,7 +12,7 @@
 1. Install **Kubernetes WordPress** project locally
 ```bash
 $ mkdir -p k8s-wp{wp-sites} && cd k8s-wp
-k8s-wp/ $ git clone https://github.com/stcox/k8s-wordpress.git
+k8s-wp/ $ git clone https://github.com/k8swp/k8s-wordpress.git
 ```
 
 2. Install **Helm & Tiller**
