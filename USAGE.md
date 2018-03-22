@@ -11,23 +11,23 @@
 ## Installation
 1. Install **Kubernetes WordPress** project locally
 ```bash
-$ mkdir -p k8s-wp{wp-sites} && cd k8s-wp
-k8s-wp/ $ git clone https://github.com/k8swp/k8s-wordpress.git
+$ mkdir -p k8swp{wp-sites} && cd k8swp
+k8swp/ $ git clone https://github.com/k8swp/k8s-wordpress.git
 ```
 
 2. Install **Helm & Tiller**
 ```bash
-k8s-wp/ $ cd k8s-wordpress
-k8s-wp/k8s-wordpress/ $ curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
-k8s-wp/k8s-wordpress/ $ kubectl create -f tiller-rbac-config.yaml
-k8s-wp/k8s-wordpress/ $ helm init --service-account tiller
+k8swp/ $ cd k8s-wordpress
+k8swp/k8s-wordpress/ $ curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
+k8swp/k8s-wordpress/ $ kubectl create -f tiller-rbac-config.yaml
+k8swp/k8s-wordpress/ $ helm init --service-account tiller
 ```
 
 3. Install core services: **Nginx-Ingress, Kube-Lego and Redis**. Use your own email address for `kube-lego`.
 ```bash
-k8s-wp/k8s-wordpress/ $ helm install nginx-ingress
-k8s-wp/k8s-wordpress/ $ helm install kube-lego --set legoEmail=myemail@mysite.com
-k8s-wp/k8s-wordpress/ $ helm install redis
+k8swp/k8s-wordpress/ $ helm install nginx-ingress
+k8swp/k8s-wordpress/ $ helm install kube-lego --set legoEmail=myemail@mysite.com
+k8swp/k8s-wordpress/ $ helm install redis
 ```
 
 ## Usage
@@ -48,14 +48,14 @@ $ gcloud compute disks create --size=5GB --zone=<**ZONE**> mysite-com
 
 3. **Configure site values** for `mysite.com`.
 ```bash
-k8s-wp/k8s-wordpress/ $ cd ../wp-sites
-k8s-wp/wp-sites/ $ cp ../k8s-wordpress/wordpress/values.yaml mysite-com.yaml
-k8s-wp/wp-sites/ $ nano mysite-com.yaml
+k8swp/k8s-wordpress/ $ cd ../wp-sites
+k8swp/wp-sites/ $ cp ../k8s-wordpress/wordpress/values.yaml mysite-com.yaml
+k8swp/wp-sites/ $ nano mysite-com.yaml
 ```
 
 4. **Install WordPress helm chart** for `mysite.com`.
 ```bash
-k8s-wp/wp-sites/ $ helm install -f mysite-com.yaml ../k8s-wordpress/wordpress
+k8swp/wp-sites/ $ helm install -f mysite-com.yaml ../k8s-wordpress/wordpress
 ```
 
 ## Acknowledgements
