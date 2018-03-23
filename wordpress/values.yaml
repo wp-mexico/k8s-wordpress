@@ -15,7 +15,7 @@ wpRedisPort: '6379'
 wpMemoryLimit: '128M'
 wpMaxMemoryLimit: '256M'
 
-wpImageTag: "1.0"
+wpImageTag: "1.1.1"
 ngImageTag: "1.0"
 
 enableResourceLimits: false   # If true, adjust below
